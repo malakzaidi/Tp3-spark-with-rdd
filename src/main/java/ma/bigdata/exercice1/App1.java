@@ -1,4 +1,4 @@
-package ma.bigdata;
+package ma.bigdata.exercice1;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
