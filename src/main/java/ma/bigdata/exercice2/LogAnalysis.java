@@ -41,12 +41,12 @@ public class LogAnalysis {
         // Configure Spark for local execution
         SparkConf conf = new SparkConf()
                 .setAppName("Web Server Log Analysis")
-                .setMaster("local[*]");
+                .setMaster("spark://spark-master:7077");
 
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         // Input path - change to HDFS path for cluster execution
-        String inputPath = "ma/bigdata/exercice2/data/access.log";
+        String inputPath = "hdfs://namenode:8020/logs/access.log";
         System.out.println(" Reading logs from: " + inputPath);
 
         // 1. Load the log file
