@@ -118,24 +118,14 @@ date city product price
 
 **Implementation: App1.java**
 
-```java
-// Key RDD Operations:
-// 1. Read data from file
-JavaRDD<String> lines = sc.textFile(inputPath);
+<img width="1261" height="920" alt="Screenshot 2025-11-15 203856" src="https://github.com/user-attachments/assets/2e3f2760-c0d3-47a5-8f50-ef91d8d96ec5" />
 
-// 2. Extract (city, price) pairs
-JavaPairRDD<String, Double> pairs = lines.flatMapToPair(line -> {
-    String[] parts = line.trim().split("\\s+");
-    String city = parts[1];
-    double price = Double.parseDouble(parts[3]);
-    return Arrays.asList(new Tuple2<>(city, price)).iterator();
-});
 
-// 3. Sum prices by city
-JavaPairRDD<String, Double> result = pairs.reduceByKey((a, b) -> a + b);
-```
+**Implementation: App2.java**
 
----
+<img width="1499" height="882" alt="Screenshot 2025-11-15 203952" src="https://github.com/user-attachments/assets/a1ff93ba-1fce-44cd-ace3-e5afbca4c439" />
+
+
 
 ### Exercise 1: Local Execution
 
@@ -163,7 +153,8 @@ Tanger : 1950.00 DH
 ==================================
 ```
 
-![App1 Local Execution](screenshots/app1_local_execution.png)
+<img width="1688" height="745" alt="Screenshot 2025-11-15 201207" src="https://github.com/user-attachments/assets/e6977f81-f5e4-4ba0-a52f-cc8b1b80a8b3" />
+
 
 **Results - App2 (Sales by City and Year):**
 ```
@@ -180,7 +171,8 @@ Tanger : 1950.00 DH
 ==================================
 ```
 
-![App2 Local Execution](screenshots/app2_local_execution.png)
+
+<img width="1736" height="741" alt="Screenshot 2025-11-15 201146" src="https://github.com/user-attachments/assets/a057ee08-8bd5-4593-9a05-6e7c516a95a4" />
 
 ---
 
@@ -191,7 +183,9 @@ Tanger : 1950.00 DH
 docker-compose up -d
 ```
 
-![Docker Cluster Started](screenshots/docker_cluster_started.png)
+<img width="950" height="818" alt="Screenshot 2025-11-15 212237" src="https://github.com/user-attachments/assets/ad081fc6-c662-4c4b-8886-fb06c0bfd27a" />
+
+<img width="749" height="932" alt="Screenshot 2025-11-15 212325" src="https://github.com/user-attachments/assets/08f63f87-eb68-4dbe-bc41-3dbc37a236cc" />
 
 **Step 2: Upload Data to HDFS**
 ```bash
@@ -206,7 +200,12 @@ docker exec tp3-spark-with-rdd-namenode-1 hdfs dfs -ls /data/
 docker exec tp3-spark-with-rdd-namenode-1 hdfs dfs -cat /data/ventes.txt
 ```
 
-![HDFS Upload](screenshots/hdfs_ventes_upload.png)
+<img width="1717" height="441" alt="Screenshot 2025-11-15 215033" src="https://github.com/user-attachments/assets/cd32548d-06bd-4217-9395-c47c78985ba2" />
+
+<img width="1792" height="248" alt="Screenshot 2025-11-15 221154" src="https://github.com/user-attachments/assets/41235ee9-d26a-47c1-9145-95b10c4d41d1" />
+
+<img width="1900" height="990" alt="Screenshot 2025-11-16 132240" src="https://github.com/user-attachments/assets/eaf35b57-178c-4408-8351-cf54a476fc32" />
+
 
 **Step 3: Submit Applications to Spark Cluster**
 ```bash
@@ -226,13 +225,28 @@ docker exec spark-master /opt/spark/bin/spark-submit \
   --total-executor-cores 2 \
   /opt/spark-apps/tp3-spark-with-rdd-1.0-SNAPSHOT.jar
 ```
+App 1:
+
+<img width="1785" height="793" alt="Screenshot 2025-11-16 132639" src="https://github.com/user-attachments/assets/10f30c1e-b9af-49fa-9c1c-6c77a21d08f3" />
+<img width="1780" height="762" alt="Screenshot 2025-11-16 132655" src="https://github.com/user-attachments/assets/7856c510-b9a5-449b-ae7b-fa4bd06d316f" />
+<img width="1779" height="727" alt="Screenshot 2025-11-16 132708" src="https://github.com/user-attachments/assets/e177200c-0ff7-4ee2-a44b-859c7857550b" />
+
+App 2 :
+<img width="1785" height="581" alt="Screenshot 2025-11-16 134846" src="https://github.com/user-attachments/assets/173e082e-e279-40af-bf7f-94895103df63" />
+<img width="1798" height="735" alt="Screenshot 2025-11-16 134916" src="https://github.com/user-attachments/assets/f843f983-d30e-4b30-9a4d-ff7dff1ae34f" />
+
+
 
 **Cluster Monitoring:**
 
-![Spark Master UI](screenshots/spark_master_ui.png)
+<img width="1918" height="1039" alt="Screenshot 2025-11-16 170248" src="https://github.com/user-attachments/assets/49c47279-9445-42fa-876b-3857bd22a57c" />
+
 *Spark Master UI showing 2 alive workers and completed applications*
 
-![Spark Worker Details](screenshots/spark_worker_details.png)
+
+<img width="1919" height="1042" alt="Screenshot 2025-11-16 170305" src="https://github.com/user-attachments/assets/c3b4f35e-a5fd-4911-bfe3-2090473f9ffa" />
+<img width="1919" height="1070" alt="Screenshot 2025-11-16 170324" src="https://github.com/user-attachments/assets/1821d4ec-7027-4586-b87a-91b48d73ff90" />
+
 *Worker details showing finished executors for both applications*
 
 **Results:**
@@ -241,6 +255,10 @@ Both applications produced identical results when running on the cluster, demons
 - ✅ Data locality with HDFS
 - ✅ Fault tolerance
 - ✅ Resource management by YARN
+
+
+
+
 
 ---
 
