@@ -398,6 +398,10 @@ docker exec spark-master /opt/spark/bin/spark-submit \
   --total-executor-cores 2 \
   /opt/spark-apps/tp3-spark-with-rdd-1.0-SNAPSHOT.jar
 ```
+<img width="1913" height="1049" alt="Screenshot 2025-11-16 210133" src="https://github.com/user-attachments/assets/a4ba0a85-e808-41e0-b072-edfdd4936104" />
+<img width="1919" height="991" alt="Screenshot 2025-11-16 210211" src="https://github.com/user-attachments/assets/ab8a679a-6e21-423f-bc64-1b5e6cb5ca01" />
+<img width="1919" height="999" alt="Screenshot 2025-11-16 210111" src="https://github.com/user-attachments/assets/54fede7e-70fc-4e99-aed9-a76caea41e5d" />
+
 
 **Cluster Monitoring:**
 
