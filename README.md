@@ -602,6 +602,7 @@ For questions or suggestions, please open an issue on this repository.
 **Repository**: [https://github.com/malakzaidi/Tp3-spark-with-rdd](https://github.com/malakzaidi/Tp3-spark-with-rdd)
 
 ---
+***If this project helped you please star it ^^^***
 
 **Last Updated**: November 2025  
 **Status**: ✅ Complete - All exercises implemented and tested  
