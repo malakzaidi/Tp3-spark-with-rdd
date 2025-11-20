@@ -85,6 +85,7 @@ Parse and analyze Apache web server logs to extract:
 │  └──────────────┘  └──────────────┘  └──────────────┘      │
 └─────────────────────────────────────────────────────────────┘
 ```
+<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/8c42ca2c-46f7-4adf-884d-290afe631781" />
 
 ### Data Flow
 
@@ -142,6 +143,8 @@ java -cp target/tp3-spark-with-rdd-1.0-SNAPSHOT.jar ma.bigdata.exercice1.App2
 ```
 
 **Results - App1 (Sales by City):**
+
+<img width="1688" height="745" alt="Screenshot 2025-11-15 201207" src="https://github.com/user-attachments/assets/e6977f81-f5e4-4ba0-a52f-cc8b1b80a8b3" />
 ```
 ========== APP1 RESULTS ==========
 Marrakech : 3000.00 DH
@@ -153,10 +156,9 @@ Tanger : 1950.00 DH
 ==================================
 ```
 
-<img width="1688" height="745" alt="Screenshot 2025-11-15 201207" src="https://github.com/user-attachments/assets/e6977f81-f5e4-4ba0-a52f-cc8b1b80a8b3" />
-
-
 **Results - App2 (Sales by City and Year):**
+
+<img width="1736" height="741" alt="Screenshot 2025-11-15 201146" src="https://github.com/user-attachments/assets/a057ee08-8bd5-4593-9a05-6e7c516a95a4" />
 ```
 ========== APP2 RESULTS ==========
 2023 | Agadir | 1100.00 DH
@@ -170,9 +172,6 @@ Tanger : 1950.00 DH
 2024 | Rabat | 950.00 DH
 ==================================
 ```
-
-
-<img width="1736" height="741" alt="Screenshot 2025-11-15 201146" src="https://github.com/user-attachments/assets/a057ee08-8bd5-4593-9a05-6e7c516a95a4" />
 
 ---
 
@@ -257,9 +256,6 @@ Both applications produced identical results when running on the cluster, demons
 - ✅ Resource management by YARN
 
 
-
-
-
 ---
 
 ## 🔍 Exercise 2: Web Server Log Analysis
@@ -316,52 +312,11 @@ java -cp target/tp3-spark-with-rdd-1.0-SNAPSHOT.jar ma.bigdata.exercice2.LogAnal
 ```
 
 **Complete Analysis Report:**
+<img width="1792" height="688" alt="Screenshot 2025-11-16 162608" src="https://github.com/user-attachments/assets/8766bf7d-23a9-435b-b147-b874d5032248" />
+<img width="1792" height="706" alt="Screenshot 2025-11-16 162633" src="https://github.com/user-attachments/assets/ac3157d0-6db0-4c88-99a6-0786a06dfc79" />
+<img width="1791" height="689" alt="Screenshot 2025-11-16 162652" src="https://github.com/user-attachments/assets/2dd3ea45-adeb-4d49-902f-6b1065c7a090" />
+<img width="1848" height="689" alt="Screenshot 2025-11-16 162823" src="https://github.com/user-attachments/assets/84f2765f-2bdf-43a5-9cdc-bde5ca7e74a2" />
 
-```
-📂 Reading logs from: data/access.log
-
-============================================================
-        WEB SERVER LOG ANALYSIS REPORT
-============================================================
-
-📊 BASIC STATISTICS
-------------------------------------------------------------
-Total Requests: 25
-Total Errors (HTTP >= 400): 6
-Error Percentage: 24.00%
-
-🌐 TOP 5 IP ADDRESSES (Most Requests)
-------------------------------------------------------------
-1. 127.0.0.1       : 5 requests
-2. 192.168.1.10    : 5 requests
-3. 192.168.1.11    : 5 requests
-4. 203.0.113.5     : 5 requests
-5. 198.51.100.7    : 5 requests
-
-📄 TOP 5 MOST REQUESTED RESOURCES
-------------------------------------------------------------
-1. /dashboard                 : 4 requests
-2. /index.html                : 3 requests
-3. /profile                   : 2 requests
-4. /about.html                : 1 requests
-5. /contact.html              : 1 requests
-
-📈 REQUESTS DISTRIBUTION BY HTTP STATUS CODE
-------------------------------------------------------------
-HTTP 200 (OK)                    : 17 requests (68.00%)
-HTTP 201 (Created)               : 1 requests (4.00%)
-HTTP 302 (Found)                 : 2 requests (8.00%)
-HTTP 401 (Unauthorized)          : 1 requests (4.00%)
-HTTP 403 (Forbidden)             : 1 requests (4.00%)
-HTTP 404 (Not Found)             : 3 requests (12.00%)
-HTTP 500 (Internal Server Error) : 2 requests (8.00%)
-
-============================================================
-        END OF REPORT
-============================================================
-```
-
-![LogAnalysis Local Execution](screenshots/log_analysis_local.png)
 
 **Analysis Insights:**
 - ✅ **68% success rate** indicates healthy server performance
@@ -375,7 +330,10 @@ HTTP 500 (Internal Server Error) : 2 requests (8.00%)
 
 ### Exercise 2: Docker Cluster Execution
 
+<img width="1793" height="898" alt="Screenshot 2025-11-16 201755" src="https://github.com/user-attachments/assets/9df350f2-a2dd-4185-868e-2f013e7c5b71" />
+
 **Step 1: Upload Logs to HDFS**
+
 ```bash
 # Create logs directory
 docker exec tp3-spark-with-rdd-namenode-1 hdfs dfs -mkdir -p /logs
@@ -631,7 +589,7 @@ This project is developed for educational purposes as part of a Big Data course.
 
 ## 🙏 Acknowledgments
 
-- **Mr. Abdelmajid BOUSSELHAM** - Course Instructor
+- **Pr. Abdelmajid BOUSSELHAM** - Course Instructor
 - **Apache Spark Community** - For excellent documentation
 - **Hadoop Ecosystem** - For distributed computing infrastructure
 
@@ -647,4 +605,3 @@ For questions or suggestions, please open an issue on this repository.
 
 **Last Updated**: November 2025  
 **Status**: ✅ Complete - All exercises implemented and tested  
-**Version**: 1.0.0
