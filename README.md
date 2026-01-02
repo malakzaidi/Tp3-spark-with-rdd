@@ -1,4 +1,4 @@
-# 🚀 Apache Spark RDD - Sales & Log Analysis Project
+# Apache Spark RDD - Sales & Log Analysis Project
 
 [![Apache Spark](https://img.shields.io/badge/Apache%20Spark-4.0.1-orange?logo=apache-spark)](https://spark.apache.org/)
 [![Java](https://img.shields.io/badge/Java-21-red?logo=java)](https://www.oracle.com/java/)
@@ -9,7 +9,7 @@ A comprehensive Big Data project implementing **two real-world data analysis exe
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Technologies Stack](#technologies-stack)
@@ -27,7 +27,7 @@ A comprehensive Big Data project implementing **two real-world data analysis exe
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements **two comprehensive data analysis exercises** using Apache Spark's RDD (Resilient Distributed Dataset) API:
 
@@ -44,12 +44,12 @@ Parse and analyze Apache web server logs to extract:
 - HTTP status code distribution
 
 **Both exercises are executed in two modes:**
-- ✅ **Local Mode**: For development and testing
-- ✅ **Distributed Mode**: On Docker cluster with Spark Master + 2 Workers
+- **Local Mode**: For development and testing
+- **Distributed Mode**: On Docker cluster with Spark Master + 2 Workers
 
 ---
 
-## 💻 Technologies Stack
+##  Technologies Stack
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
@@ -62,7 +62,7 @@ Parse and analyze Apache web server logs to extract:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Cluster Architecture
 
@@ -95,7 +95,7 @@ Local Files → HDFS → Spark RDD → Transformations → Actions → Results
 
 ---
 
-## 📊 Exercise 1: Sales Data Analysis
+##  Exercise 1: Sales Data Analysis
 
 ### Problem Statement
 
@@ -250,15 +250,15 @@ App 2 :
 
 **Results:**
 Both applications produced identical results when running on the cluster, demonstrating:
-- ✅ Distributed processing across 2 workers
-- ✅ Data locality with HDFS
-- ✅ Fault tolerance
-- ✅ Resource management by YARN
+- Distributed processing across 2 workers
+- Data locality with HDFS
+- Fault tolerance
+- Resource management by YARN
 
 
 ---
 
-## 🔍 Exercise 2: Web Server Log Analysis
+## Exercise 2: Web Server Log Analysis
 
 ### Problem Statement
 
@@ -279,10 +279,10 @@ IP - user [date:time +zone] "METHOD resource PROTOCOL" code size "referer" "user
 ### Implementation: LogAnalysis.java
 
 **Key Features:**
-- ✅ Regex pattern matching for log parsing
-- ✅ Extraction of 6 fields: IP, DateTime, Method, Resource, HTTP Code, Size
-- ✅ Error handling for malformed entries
-- ✅ Multiple aggregation operations
+- Regex pattern matching for log parsing
+- Extraction of 6 fields: IP, DateTime, Method, Resource, HTTP Code, Size
+- Error handling for malformed entries
+- Multiple aggregation operations
 
 ```java
 // Log parsing with Regex
@@ -319,12 +319,12 @@ java -cp target/tp3-spark-with-rdd-1.0-SNAPSHOT.jar ma.bigdata.exercice2.LogAnal
 
 
 **Analysis Insights:**
-- ✅ **68% success rate** indicates healthy server performance
-- ⚠️ **24% error rate** requires attention:
+- **68% success rate** indicates healthy server performance
+- **24% error rate** requires attention:
   - 12% are 404 errors (broken links or missing resources)
   - 8% are 500 errors (server-side issues need investigation)
-- 📊 **Traffic distribution** is even across 5 IP addresses
-- 🎯 **/dashboard** is the most popular endpoint
+- **Traffic distribution** is even across 5 IP addresses
+- **/dashboard** is the most popular endpoint
 
 ---
 
@@ -364,10 +364,10 @@ docker exec spark-master /opt/spark/bin/spark-submit \
 **Cluster Monitoring:**
 
 The application successfully executed on the distributed cluster with:
-- ✅ Data read from HDFS (`hdfs://namenode:8020/logs/access.log`)
-- ✅ Processing distributed across 2 Spark workers
-- ✅ Identical results to local execution
-- ✅ Completed in ~6 seconds with distributed processing
+- Data read from HDFS (`hdfs://namenode:8020/logs/access.log`)
+- Processing distributed across 2 Spark workers
+- Identical results to local execution
+- Completed in ~6 seconds with distributed processing
 
 **Results:**
 All 6 analysis questions were answered successfully with identical results to local execution, proving:
@@ -378,7 +378,7 @@ All 6 analysis questions were answered successfully with identical results to lo
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -442,7 +442,7 @@ tp3-spark-with-rdd/
 
 ---
 
-## 📈 Results & Performance
+##  Results & Performance
 
 ### Performance Comparison
 
@@ -475,33 +475,33 @@ tp3-spark-with-rdd/
 
 ---
 
-## 🎓 Key Learnings
+##  Key Learnings
 
 ### Technical Skills Acquired
 
-✅ **Apache Spark RDD API**
+ **Apache Spark RDD API**
 - Transformations: `map`, `flatMap`, `filter`, `flatMapToPair`
 - Actions: `collect`, `count`, `reduce`, `take`
 - Pair RDD operations: `reduceByKey`, `sortByKey`, `mapToPair`
 
-✅ **Distributed Computing Concepts**
+ **Distributed Computing Concepts**
 - Data partitioning and distribution
 - Task scheduling and execution
 - Fault tolerance mechanisms
 - Resource management with YARN
 
-✅ **HDFS Integration**
+ **HDFS Integration**
 - Data upload and retrieval
 - Distributed storage benefits
 - Data locality optimization
 
-✅ **Real-World Data Processing**
+**Real-World Data Processing**
 - CSV/Text file parsing
 - Log file analysis with Regex
 - Aggregation and statistical analysis
 - Error handling and data validation
 
-✅ **Docker & Containerization**
+ **Docker & Containerization**
 - Multi-container orchestration
 - Volume mounting
 - Network configuration
@@ -509,16 +509,16 @@ tp3-spark-with-rdd/
 
 ### Best Practices Implemented
 
-- 🏗️ **Modular Code Structure** - Separate applications for different analyses
-- 📝 **Comprehensive Logging** - Clear output formatting
-- 🔒 **Error Handling** - Graceful handling of malformed data
-- 📊 **Performance Optimization** - Use of `cache()` for reused RDDs
-- 🧪 **Testing Strategy** - Local testing before cluster deployment
-- 📚 **Documentation** - Well-commented code and clear README
+-  **Modular Code Structure** - Separate applications for different analyses
+-  **Comprehensive Logging** - Clear output formatting
+-  **Error Handling** - Graceful handling of malformed data
+-  **Performance Optimization** - Use of `cache()` for reused RDDs
+-  **Testing Strategy** - Local testing before cluster deployment
+-  **Documentation** - Well-commented code and clear README
 
 ---
 
-## 🔗 Useful Commands
+## Useful Commands
 
 ### Docker Management
 ```bash
@@ -571,7 +571,7 @@ docker exec tp3-spark-with-rdd-namenode-1 hdfs dfs -rm /data/file.txt
 
 ---
 
-## 🤝 Contributors
+##  Contributors
 
 - **Malak Zaidi** - [@malakzaidi](https://github.com/malakzaidi)
   - Project Development
@@ -581,13 +581,13 @@ docker exec tp3-spark-with-rdd-namenode-1 hdfs dfs -rm /data/file.txt
 
 ---
 
-## 📄 License
+##  License
 
 This project is developed for educational purposes as part of a Big Data course.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Pr. Abdelmajid BOUSSELHAM** - Course Instructor
 - **Apache Spark Community** - For excellent documentation
@@ -595,14 +595,9 @@ This project is developed for educational purposes as part of a Big Data course.
 
 ---
 
-## 📞 Contact
+##  Contact
 
 For questions or suggestions, please open an issue on this repository.
 
 **Repository**: [https://github.com/malakzaidi/Tp3-spark-with-rdd](https://github.com/malakzaidi/Tp3-spark-with-rdd)
 
----
-***If this project helped you please star it ^^^***
-
-**Last Updated**: November 2025  
-**Status**: ✅ Complete - All exercises implemented and tested  
